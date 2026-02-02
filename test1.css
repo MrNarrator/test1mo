@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* Hamburger */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 350px;
+    height: 100vh;
+    background: #222;
+    padding: 20px;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    padding: 12px 0;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #fff;
+}
+
+/* Active states */
+.sidebar.active {
+    left: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+
+/* Buttons */
+.btn-group{
+    display:flex;
+    gap:20px;
+}
+.btn{
+    padding:14px 28px;
+    border:none;
+    background:#000000;
+    color:#ffffff;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#c21e1e;
+    color:#fff7f7;
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(6, 189, 240, 0.755);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+    
+}
+
+/* Popup */
+.popup{
+    background:#92deca;
+    width:350px;
+    padding:30px;
+    border-radius:10px;
+    animation:scaleUp 0.3s ease;
+}
+@keyframes scaleUp{
+    from{transform:scale(0.7);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+.popup h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+.popup input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+.popup button{
+    width:100%;
+    padding:10px;
+    background:#667eea;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.popup button:hover{
+    background:#764ba2;
+}
+.close{
+    text-align:center;
+    margin-top:10px;
+    color:#667eea;
+    cursor:pointer;
+}
+/* Layout for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes Logo, Buttons, and Links apart */
+  align-items: center;
+  width: 100%;
+  padding: 10px ;
+}
+
+/* Positioning the Login/Signup Group */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-left: 0px; /* Space from MyBrand */
+}
+
+/* Optional: To put them in the DEAD CENTER, use this instead: */
+/*
+.navbar { position: relative; }
+.btn-group {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+*/
+
+/* Ensure buttons look consistent */
+.btn {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Style for the 'Get Started' button inside nav-links */
+.get-started {
+  background: #13f5ed !important;
+  color: white !important;
+}
